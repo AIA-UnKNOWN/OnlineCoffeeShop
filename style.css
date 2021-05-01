@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+:root {
+	--dark: rgba(0, 0, 0, 0.79);
+	--red: rgb(236, 17, 65);
+	--yellow: rgb(238, 227, 73);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.header-wrapper {
+	background: var(--dark);
+	padding: 20px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header ul li {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+header ul li a {
+	color: white;
+	text-decoration: none;
+	position: relative;
+}
+
+header ul li a::after {
+	content: '';
+	display: block;
+	height: 2px;
+	width: 0;
+	background: white;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .5s;
+}
+
+header ul li a:hover::after {
+	width: 100%;
+}
+
+.login-button {
+	background: var(--red);
+	color: white;
+	border: none;
+	padding: 5px 25px;
+	font-weight: bold;
+	border-radius: 20px;
+	letter-spacing: 1px;
+	box-shadow: 0 0 10px var(--red);
+}
+
+main {
+	width: 100%;
+	height: 700px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.intro span {
+	font-weight: 1000;
+	/* font-size: 60px; */
+	font-size: 80px;
+	line-height: 80px;
+	letter-spacing: 2px;
+	font-variant: small-caps;
+}
+
+.intro p {
+	font-weight: 600;
+	margin: 15px 0 20px;
+	width: 450px;
+}
+
+.intro a {
+	display: inline-block;
+	text-decoration: none;
+	background: var(--red);
+	color: white;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-radius: 2px;
+}
+
+main img[alt='Coffee'] {
+	width: 500px;
+	height: 500px;
+}
+
+/* Best Selling Coffees section */
+.best-selling {
+	background: var(--dark);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 700px;
+}
+
+/* Each best selling coffee */
+.best-selling-coffee {
+	width: 300px;
+	height: fit-content;
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.158);
+	border-radius: 5px;
+	transition: all .2s;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.486);
+}
+
+.best-selling-coffee:hover {
+	transform: scale(1.05);
+	box-shadow: 5px 0 15px rgba(0, 0, 0, 0.486),
+							-5px 0 15px rgba(0, 0, 0, 0.486);
+}
+
+/* Image contianer for each best selling coffee */
+.best-selling-coffee .image-container {
+	background: white;
+	height: 300px;
+	margin-bottom: 10px;
+}
+
+.best-selling-coffee img {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Texts */
+.best-selling-coffee .title,
+.best-selling-coffee .title + p,
+.best-selling-coffee a {
+	color: white;
+}
+
+.best-selling-coffee  .title {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	display: block;
+	letter-spacing: 2px;
+}
+
+/* Description */
+.best-selling-coffee .title + p {
+	font-size: 14px;
+	height: 140px;
+	margin-bottom: 10px;
+}
+
+.best-selling-coffee .title + p::selection {
+	background: var(--red);
+}
+
+/* Button "Buy now" */
+.best-selling-coffee a {
+	display: inline-block;
+	text-decoration: none;
+	background: var(--red);
+	color: white;
+	font-weight: bold;
+	padding: 8px 16px;
+	border-radius: 2px;
+}
+
+.best-selling-coffee a:hover {
+	filter: brightness(120%);
+}
+
