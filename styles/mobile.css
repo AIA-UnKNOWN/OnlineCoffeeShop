@@ -1,0 +1,124 @@
+/* This is for mobile devices */
+
+@media (max-width: 720px) {
+
+	/* Changes the color to more solid one to avoid visibility of transparency */
+	:root {
+		--dark: rgba(49, 49, 49, 1);
+	}
+
+	/* Toggles when you press the menu icon/x icon in header nav section */
+	#toggleNav:checked ~ .header-wrapper ul {
+		width: 100%;
+		opacity: 1;
+	}
+
+	.menu-icon {
+		display: block;
+		color: white;
+		font-size: 18px;
+	}
+
+	.header-wrapper {
+		padding: 20px 15px;
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+	}
+
+	.header-wrapper ul {
+		position: absolute;
+		background: var(--dark);
+		/* top: 70px; */
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0 50% 50% 0;
+		opacity: 0;
+		transition: all .5s;
+	}
+
+	.header-wrapper ul li {
+		margin: 10px 0;
+		transition: all .5s;
+	}
+
+	header ul li:hover {
+		transform: scale(1.5);
+	}
+
+	.x-icon {
+		display: block;
+		color: white;
+		position: absolute;
+		top: 20px;
+		left: 15px;
+		font-size: 20px;
+	}
+
+	/* Introduction Area / Center of Focus */
+	main {
+		justify-content: center;
+		padding: 70px 20px 0;
+		height: 600px;
+	}
+
+	.intro span {
+		display: block;
+		text-align: center;
+	}
+
+	.intro p {
+		width: 100%;
+		text-align: center;
+	}
+
+	.intro a {
+		display: block;
+		width: fit-content;
+		margin: auto;
+	}
+
+	main img[alt='Coffee'] {
+		display: none;
+	}
+
+
+	/* Best Selling Coffees Section */
+	/* Each coffee */
+	.best-selling-coffee{
+		margin: 10px 0;
+	}
+
+
+	/* Trivia Section */
+	.trivia-container {
+		padding: 60px 15px;
+	}
+
+	.trivia-title {
+		margin-top: 25px;
+	}
+
+
+	/* More Coffees */
+	.coffees .title::before, .coffees .title::after {
+		width: 110%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.coffees .title::before {
+		top: 0;
+	}
+	
+	.coffees .title::after {
+		top: 100%;
+	}
+
+}
