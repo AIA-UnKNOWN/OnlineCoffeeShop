@@ -95,6 +95,12 @@
 		margin: 10px 0;
 	}
 
+	/* Description */
+.best-selling-coffee .title + p {
+	letter-spacing: 1px;
+	height: fit-content;
+}
+
 
 	/* Trivia Section */
 	.trivia-container {
@@ -103,6 +109,10 @@
 
 	.trivia-title {
 		margin-top: 25px;
+	}
+
+	.trivia-description {
+		letter-spacing: 1px;
 	}
 
 
