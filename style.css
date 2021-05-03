@@ -13,6 +13,18 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.viewer-container {
+	position: 'fixed';
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100vh;
+}
+
 .header-wrapper {
 	background: var(--dark);
 	padding: 20px 30px;
@@ -98,13 +110,42 @@ main img[alt='Coffee'] {
 	height: 500px;
 }
 
+
 /* Best Selling Coffees section */
-.best-selling {
+.best-selling-coffees {
 	background: var(--dark);
+}
+
+/* Section title */
+.best-selling-coffees > .title {
+	padding-top: 50px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 5px;
+	position: relative;
+}
+
+.best-selling-coffees > .title::after {
+	content: '';
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 100px;
+	height: 3px;
+	background: white;
+}
+
+.best-selling {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 700px;
+	flex-flow: row wrap;
+	height: fit-content;
+	padding: 50px 0;
 }
 
 /* Each best selling coffee */
@@ -180,3 +221,66 @@ main img[alt='Coffee'] {
 	filter: brightness(120%);
 }
 
+
+/* Trivia */
+.trivia-section {
+	/* background: rgba(255, 255, 255, 0.158); */
+	background: rgba(255, 255, 255, 0.027);
+}
+
+.trivia-section > .title {
+	padding-top: 50px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 5px;
+	position: relative;
+}
+
+.trivia-section > .title::after {
+	content: '';
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 100px;
+	height: 3px;
+	background: white;
+}
+
+.trivia-container{
+	padding: 60px 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.coffee-container {
+	height: 250px;
+	width: 350px;
+}
+
+.coffee-container img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.trivia {
+	max-width: 700px;
+	color: white;
+}
+
+.trivia-title {
+	font-weight: bold;
+	font-size: 27px;
+	margin-bottom: 25px;
+}
+
+.trivia-description {
+	font-size: 15px;
+	text-align: justify;
+	text-indent: 3em;
+}

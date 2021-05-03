@@ -1,6 +1,6 @@
 (function(){
-	
-	// Write your logic here...
-	const header  = document.querySelector('header');
 
+	const body = document.querySelector('body');
+	const image = document.querySelector('.coffee-container img');
+	
 })();
