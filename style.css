@@ -224,7 +224,6 @@ main img[alt='Coffee'] {
 
 /* Trivia */
 .trivia-section {
-	/* background: rgba(255, 255, 255, 0.158); */
 	background: rgba(255, 255, 255, 0.027);
 	padding-bottom: 50	px;
 }
@@ -289,16 +288,35 @@ main img[alt='Coffee'] {
 
 /* More Coffees */
 .coffees {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 
 .coffees .title {
-	text-align: center;
 	font-weight: bold;
 	font-size: 35px;
 	letter-spacing: 3px;
-	margin-bottom: 40px;
 	position: relative;
+	display: block;
+	width: fit-content;
+	margin: 0 auto 40px;
+}
+
+.coffees .title::before, .coffees .title::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 2px;
+	width: 60%;
+	background: var(--red);
+}
+
+.coffees .title::before {
+	left: -70%;
+}
+
+.coffees .title::after {
+	right: -70%;
 }
 
 .coffees .content {
