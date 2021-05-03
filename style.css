@@ -226,6 +226,7 @@ main img[alt='Coffee'] {
 .trivia-section {
 	/* background: rgba(255, 255, 255, 0.158); */
 	background: rgba(255, 255, 255, 0.027);
+	padding-bottom: 50	px;
 }
 
 .trivia-section > .title {
@@ -283,4 +284,85 @@ main img[alt='Coffee'] {
 	font-size: 15px;
 	text-align: justify;
 	text-indent: 3em;
+}
+
+
+/* More Coffees */
+.coffees {
+	padding: 40px 0;
+}
+
+.coffees .title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 35px;
+	letter-spacing: 3px;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.coffees .content {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+/* Each coffee */
+.coffee {
+	background: black;
+	width: 300px;
+	height: 250px;
+	border-radius: 2px;
+	box-shadow: 0 5px 15px var(--dark);
+	position: relative;
+	overflow: hidden;
+	margin: 30px;
+	transition: all .5s;
+}
+
+.coffee > img {
+	width: auto;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all .5s;
+}
+
+.coffee .info {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.616);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	opacity: 0;
+	transition: all .5s;
+}
+
+.coffee .info .name {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* When hover the coffee product */
+.coffee:hover {
+	transform: scale(1.1);
+	box-shadow: 0 5px 30px var(--dark);
+}
+
+.coffee:hover > img {
+	/* width: 100%;
+	height: auto; */
+	transform: translate(-50%, -50%) scale(1.3);
+}
+
+.coffee:hover .info {
+	opacity: 1;
 }
