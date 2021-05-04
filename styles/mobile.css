@@ -132,4 +132,24 @@
 		top: 100%;
 	}
 
+
+	/* Contect Us */
+	.contact-us-container {
+		padding: 40px 10px;
+	}
+
+	.contact-us {
+		width: 100%;
+		padding: 27px 20px 20px;
+		justify-content: center;
+	}
+
+	.contact-us img {
+		display: none;
+	}
+
+	.contact-us form {
+		margin: 0;
+	}
+
 }

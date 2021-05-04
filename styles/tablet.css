@@ -96,4 +96,18 @@
 		letter-spacing: 1px;
 	}
 
+
+	/* Contact Us */
+	.contact-us-container {
+		padding: 40px 10px;
+	}
+
+	.contact-us {
+		justify-content: space-evenly;
+	}
+
+	.contact-us img {
+		width: 45%;
+	}
+
 }
