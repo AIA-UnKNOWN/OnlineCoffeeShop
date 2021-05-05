@@ -556,3 +556,52 @@ main img[alt='Coffee'] {
 	border-radius: 15px;
 	margin-top: 8px;
 }
+
+/* Footer */
+footer {
+	background: var(--dark);
+	color: white;
+	padding: 20px;
+}
+
+footer nav {
+	display: flex;
+	justify-content: center;
+}
+
+footer nav a {
+	text-decoration: none;
+	box-shadow: 0 0 1px white;
+	border-radius: 50%;
+	color: white;
+	margin: 0 7px;
+	height: 30px;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	opacity: .8;
+	transition: all .3s;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	-moz-transition: all .3s;
+}
+
+footer nav a:hover {
+	opacity: 1;
+	transform: translateY(-5px);
+}
+
+.hr {
+	display: block;
+	height: 1px;
+	background: white;
+	margin: 10px 0;
+}
+
+.copyright {
+	font-size: 12px;
+	display: block;
+	text-align: center;
+}
