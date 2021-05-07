@@ -24,23 +24,24 @@
 	function labelMovesToTop(owner) {
 		const labelSibling = owner.previousElementSibling;
 
-			// Changes the style of labels when the user is in the field
-			labelSibling.style.top = '-20px';
-			labelSibling.style.left = '0';
-			labelSibling.style.color = 'white';
-			labelSibling.style.fontSize = '12px';
+		// Changes the style of labels when the user is in the field
+		labelSibling.style.top = '-20px';
+		labelSibling.style.left = '0';
+		labelSibling.style.color = 'white';
+		labelSibling.style.fontSize = '12px';
 	}
 
 	function labelMovesBack(e, owner) {
 		const labelSibling = owner.previousElementSibling;
 
-		// Checks if the user inputs something in the field
 		if (e.target.value.trim() === '') {
 			labelSibling.style.top = '10px';
 			labelSibling.style.left = '10px';
 			labelSibling.style.color = 'gray';
 			labelSibling.style.fontSize = '14px';
+			labelSibling.style.color = 'red';
 		}
+
 	}
 
 	// For each input field specified above
@@ -53,12 +54,37 @@
 
 		// Triggers when a user finishes the input
 		field.onblur = function(e) {
-			/* This method depends if the user
+			/* This method moves depending if the user
 			left something in the input then it
 			won't go back to its position unless
 			the user clears the input */
 			labelMovesBack(e, this);
 		}
 	}
+
+	(function() {
+		// You can find you user id in the integraion section of your dashboard
+		emailjs.init('user_aW9POqcWHaoSnuxIHFPJr');
+	})();
+
+	contactUsForm.addEventListener('submit', function(e) {
+		// This prevents the page from refreshing when submitting the form
+		e.preventDefault();
+
+		// Checks if all fields are not empty
+		if (Boolean(userName.value) && Boolean(userEmail.value) && Boolean(userMessage.value)) {
+			// Initializes EmailJS api for emailing
+			emailjs.sendForm('service_4lqq7n6', 'template_qw9jjjj', this)
+				.then(function() {
+					// If success, clears all the inputs
+					userName.value = '';
+					userEmail.value = '';
+					userMessage.value = '';
+				}, function() {
+					console.log('Unsent!');
+				})
+		}
+
+	});
 
 })();
