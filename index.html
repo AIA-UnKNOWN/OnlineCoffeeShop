@@ -11,6 +11,34 @@
 	<link rel="stylesheet" href="./styles/tablet.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script>
+		(function() {
+			// You can find you user id in the integraion section of your dashboard
+			emailjs.init('user_aW9POqcWHaoSnuxIHFPJr');
+		})();
+	</script>
+	<script>
+		window.onload = function() {
+			const contactUsForm = document.querySelector('.contact-us form');
+			
+			contactUsForm.addEventListener('submit', function(e) {
+				// This prevents the page from refreshing when submitting the form
+				e.preventDefault();
+
+				// Checks if all fields are not empty
+				if (Boolean(userName) && Boolean(userEmail) && Boolean(userMessage)) {
+					// Initializes EmailJS api for emailing
+					emailjs.sendForm('service_4lqq7n6', 'template_qw9jjjj', this)
+						.then(function() {
+							console.log('Sent!');
+						}, function() {
+							console.log('Unsent!');
+						})
+				}
+
+			});
+		}
+	</script>
 	<title>CoffeeShop</title>
 </head>
 <body>
@@ -161,7 +189,7 @@
 	<div id="contact" class="contact-us-container">
 		<div class="contact-us">
 			<img src="./svg/ContactUs.svg" alt="ContactUs">
-			<form action="">
+			<form>
 				<h1>Contact Us</h1>
 				<div class="user-name">
 					<label for="userName">Name</label>
@@ -169,7 +197,7 @@
 				</div>
 				<div class="user-email">
 					<label for="userEmail">Email</label>
-					<input type="text" name="userEmail" id="userEmail">
+					<input type="email" name="userEmail" id="userEmail">
 				</div>
 				<div class="user-message">
 					<label for="userMessage">Message</label>
@@ -183,13 +211,13 @@
 	<!-- Footer -->
 	<footer>
 		<nav>
-			<a href="" class="social-media">
+			<a target="_blank" href="https://web.facebook.com/AjboyIanAbordo" class="social-media">
 				<i class="fab fa-facebook-f"></i>
 			</a>
-			<a href="" class="social-media">
+			<a target="_blank" href="https://mail.google.com/mail/u/0/#inbox" class="social-media">
 				<i class="fas fa-envelope"></i>
 			</a>
-			<a href="" class="social-media">
+			<a target="_blank" href="https://github.com/AIA-UnKNOWN" class="social-media">
 				<i class="fab fa-github"></i>
 			</a>
 		</nav>

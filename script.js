@@ -21,8 +21,8 @@
 
 
 	// Methods for Contact Form Fields
-	function labelMovesToTop() {
-		const labelSibling = this.previousElementSibling;
+	function labelMovesToTop(owner) {
+		const labelSibling = owner.previousElementSibling;
 
 			// Changes the style of labels when the user is in the field
 			labelSibling.style.top = '-20px';
@@ -31,8 +31,8 @@
 			labelSibling.style.fontSize = '12px';
 	}
 
-	function labelMovesBack() {
-		const labelSibling = this.previousElementSibling;
+	function labelMovesBack(e, owner) {
+		const labelSibling = owner.previousElementSibling;
 
 		// Checks if the user inputs something in the field
 		if (e.target.value.trim() === '') {
@@ -48,23 +48,17 @@
 
 		// Triggers when a user tries to input something
 		field.onfocus = function() {
-			labelMovesToTop();
+			labelMovesToTop(this);
 		}
 
 		// Triggers when a user finishes the input
-		field.onblur = function() {
+		field.onblur = function(e) {
 			/* This method depends if the user
 			left something in the input then it
 			won't go back to its position unless
 			the user clears the input */
-			labelMovesBack();
+			labelMovesBack(e, this);
 		}
 	}
-
-
-	// (function() {
-	// 	// Initializes EmailJS api for emailing
-
-	// })();
 
 })();
