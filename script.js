@@ -1,5 +1,45 @@
 (function(){
 
+	// Animation for header when a user scrolls
+	const header = document.querySelector('.header-wrapper');
+	let prevScrollHeight = 0;
+
+	// Animation to trigger
+	const animateOnScroll = () => {
+		// Scroll Height
+		const scrollHeight = window.scrollY;
+		// Current scroll height
+		const currentHeight = scrollHeight;
+
+		// This checks if a user scroll up or down
+		if (prevScrollHeight < currentHeight) {
+			// header hides
+			header.classList.add('hide');
+		} else {
+			// header shows
+			header.classList.remove('hide');
+		}
+
+		// Assign the previous scroll height
+		prevScrollHeight = scrollHeight;
+	}
+
+	const deviceWidth = window.matchMedia('(max-width: 720px)');
+	const matchDevice = x => {
+		if (x.matches) {
+			// Detect when scrolling
+			window.addEventListener('scroll', animateOnScroll);
+			
+		} else {
+			window.removeEventListener('scroll', animateOnScroll);
+		}
+	}
+	matchDevice(deviceWidth);
+	deviceWidth.addListener(matchDevice);
+
+
+	
+
 	// Closes nav after a navigation link is clicked
 	const navs = document.querySelectorAll('.header-wrapper ul li a');
 	const toggleNav = document.querySelector('#toggleNav');
